@@ -11,6 +11,12 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Content\tribble1.png" />
+    <None Remove="Content\tribble2.png" />
+    <None Remove="Content\tribble3.png" />
+    <None Remove="Content\tribble4.png" />
+  </ItemGroup>
+  <ItemGroup>
     <TrimmerRootAssembly Include="Microsoft.Xna.Framework.Content.ContentTypeReader" Visible="false" />
   </ItemGroup>
   <ItemGroup>
