@@ -60,8 +60,8 @@ namespace Monogame_3___Animation_Part_1
             tribbleGreyRect.X += (int)tribbleGreySpeed.X;
             tribbleGreyRect.Y += (int)tribbleGreySpeed.Y;
 
-            //if (tribbleGreyRect.Right > _graphics.PreferredBackBufferWidth || tribbleGreyRect.X < 0)
-            //    tribbleGreySpeed.X *= -1;
+            if (tribbleGreyRect.Right > _graphics.PreferredBackBufferWidth || tribbleGreyRect.X < 0)
+                tribbleGreySpeed.X *= -1;
             if (tribbleGreyRect.Bottom > _graphics.PreferredBackBufferHeight || tribbleGreyRect.Top < 0)
                 tribbleGreySpeed.Y *= -1;
 
