@@ -15,6 +15,7 @@ namespace Monogame_3___Animation_Part_1
         
         Texture2D tribbleGreyTexture;
         Rectangle tribbleGreyRect;
+        Vector2 tribbleGreySpeed;
 
         Texture2D tribbleOrangeTexture;
 
@@ -33,7 +34,8 @@ namespace Monogame_3___Animation_Part_1
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            tribbleGreyRect = new Rectangle(10, 10, 50, 50);
+            tribbleGreyRect = new Rectangle(300, 10, 100, 100);
+            tribbleGreySpeed = new Vector2(2, 0);
 
             base.Initialize();
         }
@@ -54,6 +56,14 @@ namespace Monogame_3___Animation_Part_1
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            tribbleGreyRect.X += (int)tribbleGreySpeed.X;
+            tribbleGreyRect.Y += (int)tribbleGreySpeed.Y;
+
+            //if (tribbleGreyRect.Right > _graphics.PreferredBackBufferWidth || tribbleGreyRect.X < 0)
+            //    tribbleGreySpeed.X *= -1;
+            if (tribbleGreyRect.Bottom > _graphics.PreferredBackBufferHeight || tribbleGreyRect.Top < 0)
+                tribbleGreySpeed.Y *= -1;
 
             // TODO: Add your update logic here
 
